@@ -11,8 +11,7 @@ module Everything
   class Cli < Thor
     desc "new PIECE_NAME", "Create a new everything piece, in your current directory, with the given name, which must be in spinal-case."
     def new(piece_name)
-      current_dir          = Dir.pwd
-      piece_path_to_create = File.join(current_dir, piece_name)
+      piece_path_to_create = piece_path(piece_name)
       Dir.mkdir(piece_path_to_create)
 
       content_file      = 'index.md'
@@ -46,8 +45,21 @@ public: false}
 
     desc "open_new PIECE_NAME", "Create a new everything piece, in your current directory, with the given name, which must be in spinal-case. And then open it in gvim."
     def open_new(piece_name)
-      piece_path = new(piece_name)
-      fork { `gvim -O #{piece_path}/index.{md,yaml}` }
+      new(piece_name)
+      open(piece_name)
+    end
+
+    desc "open PIECE_NAME", "Open the piece, in your current directory, in gvim."
+    def open(piece_name)
+      path = piece_path(piece_name)
+      fork { `gvim -O #{path}/index.{md,yaml}` }
+    end
+
+  private
+
+    def piece_path(piece_name)
+      current_dir = Dir.pwd
+      File.join(current_dir, piece_name)
     end
   end
 end
