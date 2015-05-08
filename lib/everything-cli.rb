@@ -39,8 +39,6 @@ public: false}
         f.puts default_metadata
         f.puts
       end
-
-      return piece_path_to_create
     end
 
     desc "open_new PIECE_NAME", "Create a new everything piece, in your current directory, with the given name, which must be in spinal-case. And then open it in gvim."
