@@ -46,11 +46,21 @@ There will also be an `index.yaml`, which has some default content, to specify
 that this piece is not public. This setting, or any others you provide, might
 be used by various `everything` extensions.
 
+### ev open {PIECE_NAME}
+
+Uses the `everything` piece by the name you give, which it finds in the
+currect directory.
+
+Opens the content and metadata files in `gvim` in a vertical split.
+
+This makes it fast to edit an existing `everything` piece.
+
+Note: If you're in the piece's folder, you can do `ev open .`!
+
 ### ev open_new {PIECE_NAME}
 
 Creates a new `everything` piece, like `new` above.
-
-Then it opens the content and metadata files in `gvim` in a vertical split.
+Then opens the piece, like `open` above.
 
 Since `new` gives the files some boilerplate content, and `open_new` opens the
 files in `gvim`, this makes it very fast to start writing a new `everything`
