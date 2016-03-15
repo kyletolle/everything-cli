@@ -1,7 +1,8 @@
+# encoding: UTF-8
 require 'rubygems'
 require 'bundler/setup'
+Bundler.require(:default)
 
-require 'thor'
 require 'fileutils'
 
 require 'active_support'
