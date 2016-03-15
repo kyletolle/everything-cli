@@ -8,7 +8,7 @@ require 'active_support'
 require 'active_support/core_ext/string'
 
 module Everything
-  class Cli < Thor
+  class CLI < Thor
     desc "new PIECE_NAME", "Create a new everything piece, in your current directory, with the given name, which must be in spinal-case."
     def new(piece_name)
       piece_path_to_create = piece_path(piece_name)
