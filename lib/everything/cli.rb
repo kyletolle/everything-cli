@@ -21,24 +21,26 @@ module Everything
       titleized_name = piece_name.gsub('-', ' ').titleize
       markdown_header = "# #{titleized_name}"
 
-      File.open(content_file_path, 'w') do |f|
-        f.puts markdown_header
-        f.puts
-        f.puts
-        f.puts
-      end
+      default_markdown_body = <<MD
+#{markdown_header}
+
+
+
+MD
+
+      File.write(content_file_path, default_markdown_body)
 
       metadata_file      = 'index.yaml'
       metadata_file_path = File.join(piece_path_to_create, metadata_file)
       FileUtils.touch(metadata_file_path)
 
-      default_metadata = %{---
-public: false}
+      default_yaml_metadata = <<YAML
+---
+public: false
 
-      File.open(metadata_file_path, 'w') do |f|
-        f.puts default_metadata
-        f.puts
-      end
+YAML
+
+      File.write(metadata_file_path, default_yaml_metadata)
     end
 
     map n: :new
