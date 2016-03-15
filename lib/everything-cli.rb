@@ -66,5 +66,3 @@ public: false}
   end
 end
 
-Everything::Cli.start(ARGV)
-
