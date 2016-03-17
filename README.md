@@ -32,6 +32,7 @@ ev open_new the-title-for-your-new-piece
 ### Commands
 
 #### ev new {PIECE_NAME}
+#### ev n {PIECE_NAME}
 
 Create a new `everything` piece at your current location.
 
@@ -47,6 +48,7 @@ that this piece is not public. This setting, or any others you provide, might
 be used by various `everything` extensions.
 
 ### ev open {PIECE_NAME}
+### ev o {PIECE_NAME}
 
 Uses the `everything` piece by the name you give, which it finds in the
 currect directory.
@@ -58,6 +60,7 @@ This makes it fast to edit an existing `everything` piece.
 Note: If you're in the piece's folder, you can do `ev open .`!
 
 ### ev open_new {PIECE_NAME}
+### ev on {PIECE_NAME}
 
 Creates a new `everything` piece, like `new` above.
 Then opens the piece, like `open` above.
