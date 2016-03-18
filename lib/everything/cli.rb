@@ -33,21 +33,21 @@ YAML
       piece.save
     end
 
-    map n: :new
+    map 'n' => 'new'
 
     desc "open_new PIECE_NAME", "Create a new everything piece, in your current directory, with the given name, which must be in spinal-case. And then open it in gvim."
     def open_new(piece_name)
       new(piece_name)
       open(piece_name)
     end
-    map on: :open_new
+    map 'on' => 'open_new'
 
     desc "open PIECE_NAME", "Open the piece, in your current directory, in gvim."
     def open(piece_name)
       path = piece_path(piece_name)
       fork { `gvim -O #{path}/index.{md,yaml}` }
     end
-    map o: :open
+    map 'o' => 'open'
 
   private
 
