@@ -10,6 +10,12 @@ module Everything
     desc "new PIECE_NAME", "Create a new everything piece, in your current directory, with the given name, which must be in spinal-case."
     def new(piece_name)
       path = piece_path(piece_name)
+
+      if File.exist?(path)
+        puts "Piece `#{piece_name}` already exists"
+        exit
+      end
+
       piece = Everything::Piece.new(path)
 
       titleized_name        = piece_name.gsub('-', ' ').titleize
