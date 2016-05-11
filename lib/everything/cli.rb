@@ -51,6 +51,12 @@ YAML
     desc "open PIECE_NAME", "Open the piece, in your current directory, in gvim."
     def open(piece_name)
       path = piece_path(piece_name)
+
+      unless File.exist?(path)
+        puts "Piece `#{piece_name}` does not exist"
+        exit
+      end
+
       fork { `gvim -O #{path}/index.{md,yaml}` }
     end
     map 'o' => 'open'
