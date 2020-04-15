@@ -57,7 +57,7 @@ YAML
         exit
       end
 
-      fork { `gvim -O #{path}/index.{yaml,md}` }
+      fork { `gvim -O "#{path}"/index.{yaml,md}` }
     end
     map 'o' => 'open'
 
