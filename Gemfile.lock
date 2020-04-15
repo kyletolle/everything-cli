@@ -6,8 +6,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    dotenv (2.2.0)
-    everything-core (0.0.9)
+    dotenv (2.7.5)
+    everything-core (0.0.10)
       dotenv (~> 2.1)
       fastenv (= 0.0.3)
     fastenv (0.0.3)
@@ -23,8 +23,8 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport (~> 4.2.1)
-  everything-core (~> 0.0.9)
+  everything-core (~> 0.0.10)
   thor
 
 BUNDLED WITH
-   1.14.6
+   2.1.4
